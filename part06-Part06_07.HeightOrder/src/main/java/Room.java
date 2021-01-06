@@ -35,6 +35,9 @@ public class Room {
     }
 
     public Person take() {
+        if (this.persons.isEmpty()){
+            return null;
+        }
         Person shortestPerson = this.shortest();
         this.persons.remove(shortestPerson);
         return shortestPerson;
